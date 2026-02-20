@@ -1,173 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Loogical — A Lab for What's Next</title>
-  <meta name="description" content="Loogical is an independent tech lab crafting tools and services for cybersecurity, AI, mobile, cloud, and automation. Built for technical people who care about what they use." />
-  <meta property="og:title" content="Loogical — A Lab for What's Next" />
-  <meta property="og:description" content="Tools and services for cybersecurity, AI, mobile and cloud. Built to solve real problems for technical minds." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://loogical.com" />
+  <title>Loogical</title>
+  <meta name="description" content="Loogical — Building things that matter." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #080c14;
+      --text-primary: #f0f4ff;
+      --text-secondary: #6b7fa3;
+      --text-muted: #3a4a66;
+      --accent-cyan: #38bdf8;
+      --accent-purple: #818cf8;
+      --border: rgba(255, 255, 255, 0.07);
+      --font: 'Inter', system-ui, sans-serif;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font);
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* BACKGROUND */
+    .bg-glow {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .bg-glow::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, transparent 70%);
+      top: -150px;
+      left: -150px;
+    }
+
+    .bg-glow::after {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(129, 140, 248, 0.07) 0%, transparent 70%);
+      bottom: -100px;
+      right: -100px;
+    }
+
+    /* MAIN */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      border-radius: 14px;
+      margin-bottom: 28px;
+      opacity: 0.95;
+    }
+
+    .brand {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .tagline {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      font-weight: 400;
+      line-height: 1.6;
+      max-width: 340px;
+      margin-bottom: 40px;
+    }
+
+    .contact-link {
+      display: inline-block;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: color 0.2s ease;
+      font-weight: 500;
+    }
+
+    .contact-link:hover {
+      color: var(--accent-cyan);
+    }
+
+    /* FOOTER */
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    footer a {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    footer a:hover {
+      color: var(--text-secondary);
+    }
+
+    footer span {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      margin: 0 12px;
+    }
+  </style>
 </head>
+
 <body>
 
-  <!-- NAV -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="/" class="nav-logo">
-        <img src="logo.png" alt="Loogical logo" class="nav-logo-img" />
-        <span class="nav-logo-text">Loogical</span>
-      </a>
-      <a href="mailto:info@loogical.com" class="nav-contact">Contact</a>
-    </div>
-  </nav>
+  <div class="bg-glow"></div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-grid-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-badge">
-        <span class="badge-dot"></span>
-        Independent Tech Lab
-      </div>
-      <h1 class="hero-title">
-        A lab for<br />
-        <span class="gradient-text">what's next.</span>
-      </h1>
-      <p class="hero-subtitle">
-        We build tools, apps and services for people who think in systems.<br />
-        Cybersecurity. Agentic AI. Mobile. Cloud. Automation.
-      </p>
-      <div class="hero-actions">
-        <a href="mailto:info@loogical.com" class="btn-primary">Get in touch</a>
-      </div>
-    </div>
-    <div class="hero-orbs">
-      <div class="orb orb-1"></div>
-      <div class="orb orb-2"></div>
-      <div class="orb orb-3"></div>
-    </div>
-  </section>
+  <main>
+    <img src="logo.png" alt="Loogical" class="logo" />
+    <h1 class="brand">Loogical</h1>
+    <p class="tagline">Building things that matter.</p>
+    <a href="mailto:info@loogical.com" class="contact-link">info@loogical.com</a>
+  </main>
 
-  <!-- FOCUS AREAS -->
-  <section class="section" id="focus">
-    <div class="container">
-      <div class="section-label">Focus Areas</div>
-      <h2 class="section-title">What we work on</h2>
-      <p class="section-desc">We focus on problems that matter to technical minds — practitioners, builders, and researchers who need reliable, well-crafted tools.</p>
-
-      <div class="cards-grid">
-        <div class="card" id="card-security">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><circle cx="12" cy="11" r="3"/><line x1="15" y1="14" x2="18" y2="17"/></svg>
-          </div>
-          <h3 class="card-title">Cybersecurity</h3>
-          <p class="card-desc">Vulnerability management, threat intelligence, and security tooling for practitioners who demand precision.</p>
-          <div class="card-tags">
-            <span class="tag">CVE Tracking</span>
-            <span class="tag">Vuln Management</span>
-            <span class="tag">Threat Intel</span>
-          </div>
-        </div>
-
-        <div class="card" id="card-ai">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-          </div>
-          <h3 class="card-title">Agentic AI</h3>
-          <p class="card-desc">Autonomous systems and agents that think, act and adapt — solving complex workflows without constant human oversight.</p>
-          <div class="card-tags">
-            <span class="tag">AI Agents</span>
-            <span class="tag">LLMs</span>
-            <span class="tag">Automation</span>
-          </div>
-        </div>
-
-        <div class="card" id="card-mobile">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="2" width="12" height="20" rx="2"/><circle cx="12" cy="18" r="1"/></svg>
-          </div>
-          <h3 class="card-title">Mobile Apps</h3>
-          <p class="card-desc">Native Android applications built with modern tooling — focused on usefulness, performance and clean UX over noise.</p>
-          <div class="card-tags">
-            <span class="tag">Android</span>
-            <span class="tag">Kotlin</span>
-            <span class="tag">Jetpack Compose</span>
-          </div>
-        </div>
-
-        <div class="card" id="card-cloud">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
-          </div>
-          <h3 class="card-title">Cloud & SaaS</h3>
-          <p class="card-desc">Scalable services, APIs and platforms designed for reliability. We build things that are meant to run — not just launch.</p>
-          <div class="card-tags">
-            <span class="tag">APIs</span>
-            <span class="tag">SaaS</span>
-            <span class="tag">Infrastructure</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PHILOSOPHY -->
-  <section class="section section-dark" id="philosophy">
-    <div class="container container-narrow">
-      <div class="section-label">Philosophy</div>
-      <h2 class="section-title">Why we build</h2>
-      <div class="philosophy-blocks">
-        <div class="philosophy-item">
-          <span class="mono-number">01</span>
-          <div>
-            <h4>Small, specific, useful.</h4>
-            <p>We don't build for everyone. We build for people with real problems who deserve well-engineered solutions — not bloated products chasing market share.</p>
-          </div>
-        </div>
-        <div class="philosophy-item">
-          <span class="mono-number">02</span>
-          <div>
-            <h4>Technical depth over marketing.</h4>
-            <p>If it works, it speaks for itself. We'd rather spend time making the product better than convincing people it is.</p>
-          </div>
-        </div>
-        <div class="philosophy-item">
-          <span class="mono-number">03</span>
-          <div>
-            <h4>Always in the lab.</h4>
-            <p>The world is moving fast — especially in AI and security. We stay close to the frontier, ship thoughtfully, and keep iterating.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="section" id="contact">
-    <div class="container container-narrow center">
-      <div class="section-label">Contact</div>
-      <h2 class="section-title">Let's talk.</h2>
-      <p class="section-desc">If you have an idea, a problem worth solving, or just want to say hello — reach out. We read every message.</p>
-      <a href="mailto:info@loogical.com" class="btn-primary btn-large">info@loogical.com</a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <span class="footer-brand">Loogical</span>
-      <div class="footer-links">
-        <a href="/privacy">Privacy Policy</a>
-      </div>
-      <span class="footer-copy">© 2026 Loogical. All rights reserved.</span>
-    </div>
+  <footer>
+    <a href="/privacy">Privacy Policy</a>
+    <span>·</span>
+    <span>© 2026 Loogical</span>
   </footer>
 
 </body>
+
 </html>
